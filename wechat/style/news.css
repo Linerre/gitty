@@ -1,0 +1,288 @@
+/*
+ * NOTE:
+ * - The use of browser-specific styles (-moz-, -webkit-) should be avoided.
+ *   If used, they may not render correctly for people reading the email in
+ *   a different browser than the one from which the email was sent.
+ * - The use of state-dependent styles (like a:hover) don't work because they
+ *   don't match at the time the styles are made explicit. (In email, styles
+ *   must be explicitly applied to all elements -- stylesheets get stripped.)
+ */
+
+/* This is the overall wrapper, it should be treated as the `body` section. */
+
+p {
+    font-family: sans-serif;
+    font-size: 15pt;
+    text-align: left;
+    margin: 1.2em 5px;
+    line-height: 1.6em;
+}
+
+ruby {
+    border-top: 0.5pt solid #C0C0C0;
+    border-radius: 0.3em;
+
+}
+
+ruby rt {
+    font-size: 8pt;
+    text-align: center;
+    color: #4c566a;
+    /* border-bottom:1pt solid #C0C0C0; */
+    /* border-radius: 0.3em; */
+}
+
+sup {
+    font-size: 9pt;
+    /* font-weight: bold; */
+    /* color: #5E81AC; */
+}
+
+a {
+    font-size: 12pt;
+    text-decoration: none;
+    border-bottom: 1pt solid #5e81ac;
+}
+
+blockquote, q {
+    border-left: 4px solid #DDD;
+    padding: 0 1em;
+    quotes: none;
+  }
+  
+blockquote::before, blockquote::after, q::before, q::after {
+    content: none;
+}
+
+blockquote p {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 12pt;
+    line-height: normal;
+    word-wrap: break-word;
+    margin: 4px 0;
+    padding-bottom: 0.5em;
+}
+
+hr {
+    margin: 0.5em 0;
+    color: #4C566A;
+}
+/* wikipedia */
+.wiki-title {
+    display: block;
+    font-variant: small-caps;
+    font-family: Georgia,serif;
+    font-size: 12pt;
+    margin: 0;
+    padding: 0;
+}
+
+.wiki {
+    background-color: #D8DEE9;
+    /* background-color: #f8f9fa; */
+    border: 1pt solid #4c566a;
+    padding: 0.2em 0.5em;
+    margin: 2px;
+    line-height: normal;
+    height: 150px;
+    overflow-y: scroll;
+    scrollbar-color: #81A1C1;
+    scrollbar-width: thin;
+    
+}
+
+.wiki-text {
+    /* border: khaki 1pt solid; */
+    font-size: 11pt;
+}
+
+.wiki-img {
+    display: block;
+    float: right;
+    padding-left: 1em;
+    width: 30%;
+}
+
+
+
+/* reference/footnote*/
+.ft {
+    padding-left: 0.2em;
+    border: 1pt solid #88C0D0;
+    margin: 2px;
+    padding: 0.1em 0.1em 0.1em 0.5em;
+}
+.ft-title {
+    color: #88C0D0;
+    font-family: Verdana, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 12pt;
+    padding: 0;
+    margin: 0px;
+}
+
+ol {
+    line-height: normal;
+    list-style-type: decimal;
+    padding: 0.1em 0.1em 0.1em 1.5em;
+    margin: 0;
+
+}
+
+ol li {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 12pt;
+    word-wrap: break-word;
+    color: #5E81AC;
+    line-height: normal;
+    padding-left: 0.1em;
+    margin: 1px;
+    padding-top: 0;   
+}
+
+/* general dl and dt */
+dl dt {
+    list-style: none;
+}
+
+dl dd {
+    list-style: none;
+}
+
+.dict dd {
+    padding-left: 0.5em;
+}
+/* paraphrase */
+.pp {
+    font-family: 'Times New Roman', Times, serif;
+    border: 1pt solid #EBCB8B;
+    padding-left: 0.5em;
+    line-height: normal;
+    margin: 2px;
+}
+
+/* .pp p {
+    font-size: 12pt;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 4px 0;
+    line-height: normal;
+} */
+
+.pp-title {
+    font-family: Verdana, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 12pt;
+    color: #EBCB8B;
+}
+
+u {
+    text-decoration: none;
+    /* border-bottom: 1pt solid #81A1C1; */
+    background-color: #88C0D0;
+    border-radius: 0.2em;
+    /* border: none; */
+}
+
+.u-mark {
+    color:#EBCB8B;
+}
+.wiki u {
+    text-decoration: none;
+    border-bottom: 0.5pt solid #4C566A;
+    background-color: unset;
+}
+
+
+
+/* summary */
+.summary {
+    font-size: 14pt;
+    font-family: 'Times New Roman', Times, serif;
+    border: 1pt solid #A3BE8C;
+    padding-left: 0.5em;
+    line-height: normal;
+    margin: 2px;
+}
+
+.summary-title {
+    font-family: Verdana, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 12pt;
+    color: #A3BE8C;
+}
+
+.summary ul {
+    padding:0 0.5em;
+    margin: 2px 2px;
+
+}
+.summary ul li {
+    font-size: 12pt;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 2px 0;
+    padding-left: 0.4em;
+    line-height: normal;
+    list-style-type: '♦';
+}
+
+/* sentence pattern */
+.sentence-pattern {
+    border: 1pt solid #88C0D0;
+    padding-left: 0.5em;
+    line-height: normal;
+    margin: 2px;
+}
+
+.sentence-pattern-title {
+    font-family: Verdana, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 12pt;
+    color: #88C0D0;
+}
+
+.pattern-num {
+    font-size: inherit;
+    font-family: inherit;
+    font-size: 12pt;
+    text-transform: capitalize;
+    /* font-variant: small-caps; */
+    line-height: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+.pattern-explain {
+    font-size: inherit;
+    font-family: inherit;
+    font-size: 13pt;
+    line-height: inherit;
+    padding: 0;
+    margin: 0.5em 0;
+}
+
+.pattern-explain span {
+    border-bottom: #81A1C1 1pt solid;   
+}
+    
+/* editor note */
+.note {
+    border: 1pt solid #B48EAD;
+    padding-left: 0.5em;
+    line-height: normal;
+    margin: 2px;
+}
+
+.note-title {
+    font-family: Verdana, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 12pt;
+    color: #B48EAD;
+}
+
+.note p {
+    font-size: 12pt;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 4px 0;
+    line-height: normal;
+}
+
