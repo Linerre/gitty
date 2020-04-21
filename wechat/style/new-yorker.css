@@ -31,6 +31,20 @@
     font-family: sans-serif;
     display: block;
     float: left;
-    font-size: 4em;
-    padding-top: 6px;
+    font-size: 310%;
+    /* padding-top: 6px; */
+    line-height: 80%;
+    padding-top: 5px;
+
+}
+
+.caption {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: 10pt;
+    color: rgb(154, 157, 163);
+    text-align: center;
+    padding-top: 0;
+    margin-top: 2px;
+    
 }
