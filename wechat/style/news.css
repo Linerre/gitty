@@ -91,6 +91,13 @@ hr {
     
 }
 
+.wiki-entry {
+    border-bottom: 0.5pt solid #4C566A; 
+    font-size: 12pt; 
+    margin-bottom: 1px; 
+    padding-bottom: 1px;"
+}
+
 .wiki-text {
     /* border: khaki 1pt solid; */
     font-size: 11pt;
@@ -184,6 +191,7 @@ u {
 }
 
 .u-mark {
+    margin-left: 2px;
     color:#EBCB8B;
 }
 .wiki u {
@@ -192,6 +200,7 @@ u {
     background-color: unset;
     border-radius: unset;
 }
+
 
 
 
