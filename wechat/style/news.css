@@ -69,9 +69,10 @@ hr {
 }
 /* wikipedia */
 .wiki-title {
-    display: block;
+    /* display: block; */
     font-variant: small-caps;
     font-family: Georgia,serif;
+    font-weight: bold;
     font-size: 12pt;
     margin: 0;
     padding: 0;
