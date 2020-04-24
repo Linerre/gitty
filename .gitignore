@@ -1,3 +1,6 @@
 # ignore img
 wechat/img/
 
+# ignore test
+wechat/test*
+
