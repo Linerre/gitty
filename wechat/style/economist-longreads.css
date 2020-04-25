@@ -15,6 +15,7 @@
     margin-top: 2px;
     margin-bottom: 0;
     padding: 0;
+    width: 40%;
 }
 
 .intro {
@@ -22,6 +23,16 @@
     font-size: 12pt;
     font-weight:200;
     line-height: normal;
+    width: 50%;
+}
+
+.intro-img {
+    background-image: url('https://wx2.sbimg.cn/2020/04/25/friendly-wu.jpg');
+    background-size: 100% 100%;
+    padding: 0.2em 0.5em 8em 0.5em;
+    margin: 1px;
+    line-height: normal;
+    border: unset;
 }
 
 .author {
