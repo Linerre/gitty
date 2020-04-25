@@ -94,7 +94,8 @@ hr {
 
 .wiki-entry {
     border-bottom: 0.5pt solid #4C566A; 
-    font-size: 12pt; 
+    font-size: 11pt; 
+    font-weight: bold;
     margin-bottom: 1px; 
     padding-bottom: 1px;"
 }

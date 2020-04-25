@@ -29,7 +29,7 @@
 
 .cap {
     font-family: sans-serif;
-    display: block;
+    /* display: block; */
     float: left;
     font-size: 310%;
     /* padding-top: 6px; */
