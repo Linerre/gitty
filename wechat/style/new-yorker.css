@@ -1,3 +1,9 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 2px;
+}
+
 .biblio {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 15px;
@@ -47,4 +53,61 @@
     padding-bottom: 0;
     margin-bottom: 2px;
     margin-top: 2px;
+}
+
+.special {
+    display: inline-block;
+    width: 100%;
+    background-color: black;
+    padding: 0.5em 0;
+    color: white;
+    margin: 0;
+}
+
+.special h3 {
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10pt;
+    text-align: center;
+    font-weight: lighter;
+    padding-top: 0.5em;
+    padding-bottom: 1em;
+}
+
+.special h1 {
+    text-transform: uppercase;
+    font-family: Optima-Regula, Palatino, Georgia, 'Times New Roman', Times, serif;
+    font-size: 15pt;
+    font-weight: normal;
+    text-align: center;
+    padding-bottom: 1.2em;
+}
+
+.special h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 10pt;
+    font-weight: lighter;
+    font-style: italic;
+    text-align: center;
+    padding-bottom: 1em;
+}
+
+.special h4, h5 {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.special h4 {
+    font-size: 9pt;
+}
+
+.special h5 {
+    font-size: 8pt;
+    font-weight: normal;
+}
+
+img {
+    display: inline-block;
+    width: 100%;
+    height: auto;
 }
