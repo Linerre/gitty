@@ -108,9 +108,10 @@ h5 {
 }
 
 img {
-    /* display: block; */
+    display: block;
     width: 100%;
     height: auto;
-    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
     padding: 0;
 }
