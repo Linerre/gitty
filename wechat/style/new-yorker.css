@@ -56,15 +56,14 @@
 }
 
 .special {
-    display: inline-block;
-    width: 100%;
+    /* width: 100%; */
     background-color: black;
     padding: 0.5em 0;
     color: white;
     margin: 0;
 }
 
-.special h3 {
+h3 {
     text-transform: uppercase;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 10pt;
@@ -74,7 +73,7 @@
     padding-bottom: 1em;
 }
 
-.special h1 {
+h1 {
     text-transform: uppercase;
     font-family: Optima-Regula, Palatino, Georgia, 'Times New Roman', Times, serif;
     font-size: 15pt;
@@ -83,7 +82,9 @@
     padding-bottom: 1.2em;
 }
 
-.special h2 {
+/* for most images excluding cartoons */
+
+h2 {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 10pt;
     font-weight: lighter;
@@ -92,22 +93,24 @@
     padding-bottom: 1em;
 }
 
-.special h4, h5 {
+h4, h5 {
     font-family: sans-serif;
     text-align: center;
 }
 
-.special h4 {
+h4 {
     font-size: 9pt;
 }
 
-.special h5 {
+h5 {
     font-size: 8pt;
     font-weight: normal;
 }
 
 img {
-    display: inline-block;
+    /* display: block; */
     width: 100%;
     height: auto;
+    margin: 0;
+    padding: 0;
 }
