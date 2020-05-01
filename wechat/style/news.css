@@ -94,7 +94,7 @@ hr {
 
 .wiki-entry {
     border-bottom: 0.5pt solid #4C566A; 
-    font-size: 11pt; 
+    font-size: 13pt; 
     font-weight: bold;
     margin-bottom: 1px; 
     padding-bottom: 1px;"
@@ -282,6 +282,9 @@ u {
     padding-left: 0.5em;
     line-height: normal;
     margin: 2px;
+    height: 125px;
+    overflow-y: scroll;
+    scrollbar-width: thin;
 }
 
 .note-title {
