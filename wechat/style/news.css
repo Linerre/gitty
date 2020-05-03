@@ -94,7 +94,7 @@ hr {
 
 .wiki-entry {
     border-bottom: 0.5pt solid #4C566A; 
-    font-size: 13pt; 
+    font-size: 11pt; 
     font-weight: bold;
     margin-bottom: 1px; 
     padding-bottom: 1px;"
@@ -287,6 +287,11 @@ u {
     scrollbar-width: thin;
 }
 
+.note-short {
+    height: auto; 
+    overflow-y: unset;
+}
+
 .note-title {
     font-family: Verdana, Tahoma, sans-serif;
     font-weight: bold;
@@ -301,3 +306,24 @@ u {
     line-height: normal;
 }
 
+.old {
+    margin-top: 20px;
+    padding-top: 1em;
+    border-top: 2px solid #3d7e9a;
+}
+
+.old-title {
+    font-size: 16pt;
+    font-style: normal;
+    text-align: left;
+}
+
+.old ul {
+    list-style-type: disc;
+}
+
+.old li {
+    padding-left: 1em;
+    margin-bottom: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+}
