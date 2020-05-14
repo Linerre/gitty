@@ -33,6 +33,14 @@
     font-size: smaller;
 }
 
+.first-para::first-letter {
+    font-family: sans-serif;
+    float: left;
+    font-size: 310%;
+    line-height: 80%;
+    padding-top: 5px;
+}
+
 .cap {
     font-family: sans-serif;
     float: left;
