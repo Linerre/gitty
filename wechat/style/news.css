@@ -328,3 +328,7 @@ u {
     margin-bottom: 1em;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.old a {
+    border-bottom: unset;
+}
