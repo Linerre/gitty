@@ -288,6 +288,16 @@ u {
     scrollbar-width: thin;
 }
 
+.bias {
+    border: 1pt solid #BF616A;
+    padding-left: 0.5em;
+    line-height: normal;
+    margin: 2px;
+    height: 125px;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+}
+
 .note-short {
     height: auto; 
     overflow-y: unset;
@@ -300,7 +310,7 @@ u {
     color: #B48EAD;
 }
 
-.note p {
+.note p, .bias p {
     font-size: 12pt;
     font-family: Georgia, 'Times New Roman', Times, serif;
     margin: 4px 0;
