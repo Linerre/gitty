@@ -310,6 +310,13 @@ u {
     color: #B48EAD;
 }
 
+.bias-title {
+    font-family: Verdana, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 12pt;
+    color: #BF616A;
+}
+
 .note p, .bias p {
     font-size: 12pt;
     font-family: Georgia, 'Times New Roman', Times, serif;
