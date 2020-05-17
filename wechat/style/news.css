@@ -42,7 +42,7 @@ a {
     color:#3d7e9a;
     font-size: 12pt;
     text-decoration: none;
-    border-bottom: 1pt solid #5e81ac;
+    border-bottom: 1px solid #5e81ac;
 }
 
 blockquote, q {
