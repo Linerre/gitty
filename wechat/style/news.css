@@ -274,7 +274,8 @@ u {
 }
 
 .pattern-explain span {
-    border-bottom: #81A1C1 1pt solid;   
+    border-bottom: #81A1C1 1pt solid; 
+    line-height: 2;  
 }
     
 /* editor note */
