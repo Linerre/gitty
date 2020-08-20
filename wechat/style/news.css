@@ -167,7 +167,7 @@ dl dd {
     font-family: 'Times New Roman', Times, serif;
     border: 1pt solid #EBCB8B;
     padding-left: 0.5em;
-    line-height: normal;
+    line-height: 1;
     margin: 2px;
 }
 
