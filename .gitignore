@@ -4,3 +4,6 @@ wechat/img/
 # ignore test
 wechat/test*
 
+wechat/node_modules/
+*.json
+
