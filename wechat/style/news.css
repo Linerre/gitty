@@ -131,6 +131,12 @@ hr {
     margin: 0px;
 }
 
+/* footnote content */
+.ft-con {
+    border-bottom: #3d7e9a 1pt solid;
+    padding-bottom: 2pt;
+}
+
 ol {
     line-height: normal;
     list-style-type: decimal;
