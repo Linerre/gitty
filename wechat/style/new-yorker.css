@@ -78,7 +78,7 @@ h3 {
     padding-bottom: 1em;
 }
 
-h1 {
+.h1-special {
     text-transform: uppercase;
     font-family: Optima-Regula, Palatino, Georgia, 'Times New Roman', Times, serif;
     font-size: 15pt;
@@ -87,6 +87,14 @@ h1 {
     padding-bottom: 1.2em;
 }
 
+.h1-normal {
+    text-transform: uppercase;
+    font-family: Optima-Regula, Palatino, Georgia, 'Times New Roman', Times, serif;
+    font-size: 15pt;
+    font-weight: bold;
+    text-align: left;
+    padding-bottom: 0.4em;
+}
 /* for most images excluding cartoons */
 
 h2 {
