@@ -6,4 +6,5 @@ wechat/test*
 
 wechat/node_modules/
 *.json
+*.js
 
