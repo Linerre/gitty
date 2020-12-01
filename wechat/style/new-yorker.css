@@ -145,3 +145,9 @@ img {
     font-style: normal;
     text-align: center;
 }
+
+.ny-hr {
+    border: none;
+    color: #ccc;
+    height: 0.1px;
+}
