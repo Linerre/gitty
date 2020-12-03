@@ -18,3 +18,100 @@
     border-bottom: 1pt #000000 solid;
     text-decoration: none;
 }
+
+
+/* Bloomberg richest famliy table */
+section {
+    padding: 0;
+    margin: 0;
+}
+
+.info-parent {
+    border: 2px solid red;
+    margin: 30px 0;
+    width: 100%;
+    position: relative;
+    font-size: 22px;
+    font-family: sans-serif;
+    /*line-height: 28px;*/
+}
+
+
+.topbar {
+    border: 2px solid blue;
+    position: relative;
+    display: flex;
+}
+
+.moveup {
+    font-size: 20px;
+    line-height: 28px;
+    width: 20px;
+    height: 20px;
+    background: limegreen;
+    position: absolute;
+    border-radius: 50%;
+    text-align: center;
+    z-index: 2;
+    top: -20px;
+    left: 20px;
+}
+
+.rank {
+    top: -20px;
+    left: -10px;
+    font-size: 25px;
+    line-height: 40px;
+    background: black;
+    color: white;
+    position: absolute;
+    border-radius: 50%;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    z-index: 1;
+}
+
+.pic {
+    border: none;
+    width: 100px;
+    height: 100%;
+    min-height: 100px;
+    background-size: cover;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+
+.info{
+    border-left: 2px solid black;
+    /*border-bottom: 2px solid black;*/
+    display: grid;
+    background: black; /* to interact with the .detail background below */
+    position: relative;
+    width: 100%;
+    grid-template-columns: auto auto 22%;
+    grid-template-rows: 50% 50%;
+    /*-webkit-box-pack: stretch;
+    -webkit-justify-content: stretch;
+    -ms-flex-pack: stretch;*/
+    justify-content: stretch;
+    grid-gap: 2px;
+    font-size: 28px;
+    line-height: 30px;
+}
+    
+.detail {
+    padding: 5px;
+    background: whitesmoke;
+    font-size: 16px;
+    line-height: 20px;
+}
+.label {
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    font-size: 10px;
+    line-height: 11px;
+    display: block;
+}
