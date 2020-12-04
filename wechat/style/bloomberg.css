@@ -19,27 +19,69 @@
     text-decoration: none;
 }
 
+.rank-sec {
+    display: flex;
+    margin-bottom: -5px;
+    width: 100%;
+}
 
+/*.rank-sec {
+    background: black;
+    color: white;
+    text-align: center;
+    font-family: sans-serif;
+    border-radius: 50%;
+    line-height: 2;
+    width: 30px;
+    height: 30px;
+    margin-left: -8px;
+}*/
+
+.rank {
+    background: black;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 20px;
+    text-align: center;
+    margin-left: 0;
+}
+
+.moveup {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: limegreen;
+    color: black;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    margin-left: -10px;
+}
 
 .short {
-    border-width: 1px 0 1px 1px;
-    border-color: black;
-    border-style: solid;
     display: flex;
 }
 
-.row-1 {
-    border-bottom: 0px;
+.basics.item-1, .basics.item-3, .basics.item-5 {
+    border-right: 2px black solid;
 }
 
-.row-2 {
-    border-bottom: 0px;
+.row-1, .row-2, .row-3 {
+    padding: 0;
+    border-width: 2px 2px 0 2px;
+    border-color: black;
+    border-style: solid;
 }
 
 .basics {
     flex: 2;
+    font-family: sans-serif;
+    background: whitesmoke;
     padding: 0 2px;
-    border-right: 1px black solid;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .basics:nth-of-type(3) {
@@ -48,115 +90,50 @@
 
 .label {
     text-transform: uppercase;
-    padding: 0 2px;
+    padding: 0 1px;
     margin: 5px 0 0 0;
-    font-size: 10px;
+    font-size: 9px;
     line-height: 11px;
     display: block;
 }
 
 .long {
+    font-family: sans-serif;
     margin: 0 0 5px 0;
     padding: 5px;
     line-height: 1.2;
-    border-width: 1px 1px 1px 1px;
+    border-width: 2px 2px 2px 2px;
     border-color: black;
     border-style: solid;
 }
 
 .long-label {
+    display: block;
+    width: fit-content;
+    margin-bottom: 5px;
     font-weight: bold;
     background-color: black;
     color: whitesmoke;
+    padding: 0 3px;
+}
+
+.did-you-know, .timeline {
+    margin-top: 20px;
+}
+
+.did-you-know p {
+    padding-top: 0px;
+    margin-top: 0px;
 }
 
 
 .timeline p {
-    border-bottom: 1px dashed black;
-}
-/* Bloomberg richest famliy table */
-
-.info-parent {
-    border: 2px solid red;
-    margin: 30px 0;
-    width: 100%;
-    position: relative;
-    font-size: 22px;
-    font-family: sans-serif;
-    /*line-height: 28px;*/
+    padding-top: 0;
+    margin: 3px 2px;
+    border-bottom: 1px dotted #CCC;
 }
 
-
-.topbar {
-    border: 2px solid blue;
-    position: relative;
-    display: flex;
+p.timeline-last-para {
+    border-bottom-style: none;
 }
-
-.moveup {
-    font-size: 20px;
-    line-height: 28px;
-    width: 20px;
-    height: 20px;
-    background: limegreen;
-    position: absolute;
-    border-radius: 50%;
-    text-align: center;
-    z-index: 2;
-    top: -20px;
-    left: 20px;
-}
-
-.rank {
-    top: -20px;
-    left: -10px;
-    font-size: 25px;
-    line-height: 40px;
-    background: black;
-    color: white;
-    position: absolute;
-    border-radius: 50%;
-    text-align: center;
-    width: 40px;
-    height: 40px;
-    z-index: 1;
-}
-
-.pic {
-    border: none;
-    width: 100px;
-    height: 100%;
-    min-height: 100px;
-    background-size: cover;
-    position: relative;
-    top: 0;
-    left: 0;
-}
-
-
-.info{
-    border-left: 2px solid black;
-    /*border-bottom: 2px solid black;*/
-    display: grid;
-    background: black; /* to interact with the .detail background below */
-    position: relative;
-    width: 100%;
-    grid-template-columns: auto auto 22%;
-    grid-template-rows: 50% 50%;
-    /*-webkit-box-pack: stretch;
-    -webkit-justify-content: stretch;
-    -ms-flex-pack: stretch;*/
-    justify-content: stretch;
-    grid-gap: 2px;
-    font-size: 28px;
-    line-height: 30px;
-}
-    
-.detail {
-    padding: 5px;
-    background: whitesmoke;
-    font-size: 16px;
-    line-height: 20px;
-}
-
 
