@@ -20,11 +20,61 @@
 }
 
 
-/* Bloomberg richest famliy table */
-section {
-    padding: 0;
-    margin: 0;
+
+.short {
+    border-width: 1px 0 1px 1px;
+    border-color: black;
+    border-style: solid;
+    display: flex;
 }
+
+.row-1 {
+    border-bottom: 0px;
+}
+
+.row-2 {
+    border-bottom: 0px;
+}
+
+.basics {
+    flex: 2;
+    padding: 0 2px;
+    border-right: 1px black solid;
+}
+
+.basics:nth-of-type(3) {
+    flex: 1;
+}
+
+.label {
+    text-transform: uppercase;
+    padding: 0 2px;
+    margin: 5px 0 0 0;
+    font-size: 10px;
+    line-height: 11px;
+    display: block;
+}
+
+.long {
+    margin: 0 0 5px 0;
+    padding: 5px;
+    line-height: 1.2;
+    border-width: 1px 1px 1px 1px;
+    border-color: black;
+    border-style: solid;
+}
+
+.long-label {
+    font-weight: bold;
+    background-color: black;
+    color: whitesmoke;
+}
+
+
+.timeline p {
+    border-bottom: 1px dashed black;
+}
+/* Bloomberg richest famliy table */
 
 .info-parent {
     border: 2px solid red;
@@ -108,10 +158,5 @@ section {
     font-size: 16px;
     line-height: 20px;
 }
-.label {
-    text-transform: uppercase;
-    margin-bottom: 5px;
-    font-size: 10px;
-    line-height: 11px;
-    display: block;
-}
+
+
