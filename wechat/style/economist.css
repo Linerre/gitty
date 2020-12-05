@@ -68,3 +68,11 @@ small {
     font-size: 14px;
     text-transform: uppercase;
 }
+
+.chart-caption {
+    text-align: center;
+    font-family: serif;
+    font-size: 13px;
+    color: grey;
+}
+    

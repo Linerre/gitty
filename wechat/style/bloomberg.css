@@ -29,6 +29,16 @@ h1 {
     text-align: center;
 }
 
+.quicktake {
+    font-size: 48px;
+    line-height: 1.2;
+    text-align: left;
+    padding-top: 2px;
+    font-weight: 400;
+    width: 100%;
+    font-family: Helvetica, Arial, sans-serif;
+    letter-spacing: 0.02em;
+}
 .subtitle p {
     font-family: Helvetica,Arial,sans-serif;
     font-size: 28px;
@@ -73,6 +83,13 @@ h1 {
     line-height: 1.6;
 }
 
+.blg-p-qt {
+    font-family: serif;
+    font-size: 1.4rem;
+    margin-top: 0;
+    padding-top: 0;
+}
+
 .heanding {
     font-family: Helvetica, Arial, sans-serif;
     font-weight: 550;
@@ -94,3 +111,7 @@ h1 {
     color: rgb(118, 118, 118);
     font-size: 13px;
 }   
+
+.timestamp {
+    font-size: 14px;
+}
