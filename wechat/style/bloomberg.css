@@ -19,121 +19,78 @@
     text-decoration: none;
 }
 
-.rank-sec {
-    display: flex;
-    margin-bottom: -5px;
-    width: 100%;
-}
-
-/*.rank-sec {
-    background: black;
-    color: white;
+/* bloomberg artcles */
+h1 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 900;
+    font-size: 48px;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
     text-align: center;
-    font-family: sans-serif;
-    border-radius: 50%;
-    line-height: 2;
-    width: 30px;
-    height: 30px;
-    margin-left: -8px;
-}*/
+}
 
-.rank {
-    background: black;
-    color: white;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    font-size: 20px;
+.subtitle p {
+    font-family: Helvetica,Arial,sans-serif;
+    font-size: 28px;
+    font-weight: 900;
     text-align: center;
-    margin-left: 0;
+    line-height: 1;
+    letter-spacing: -0.02em;
 }
 
-.moveup {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background: limegreen;
-    color: black;
-    font-size: 10px;
-    font-weight: bold;
+.byline p {
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
     text-align: center;
-    margin-left: -10px;
-}
-
-.short {
-    display: flex;
-}
-
-.basics.item-1, .basics.item-3, .basics.item-5 {
-    border-right: 2px black solid;
-}
-
-.row-1, .row-2, .row-3 {
+    line-height: 1.3;
     padding: 0;
-    border-width: 2px 2px 0 2px;
-    border-color: black;
-    border-style: solid;
+    margin: 0;
 }
 
-.basics {
-    flex: 2;
-    font-family: sans-serif;
-    background: whitesmoke;
-    padding: 0 2px;
-    margin-top: 0;
-    margin-bottom: 0;
+
+.illus p {
+    font-size: 0.8rem;
+    line-height: 1;
+    text-align: center;
+    font-style: unset;
+    text-transform: unset;
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 2px auto;
 }
 
-.basics:nth-of-type(3) {
-    flex: 1;
-}
-
-.label {
-    text-transform: uppercase;
-    padding: 0 1px;
-    margin: 5px 0 0 0;
-    font-size: 9px;
-    line-height: 11px;
-    display: block;
-}
-
-.long {
-    font-family: sans-serif;
-    margin: 0 0 5px 0;
-    padding: 5px;
-    line-height: 1.2;
-    border-width: 2px 2px 2px 2px;
-    border-color: black;
-    border-style: solid;
-}
-
-.long-label {
-    display: block;
-    width: fit-content;
-    margin-bottom: 5px;
-    font-weight: bold;
-    background-color: black;
+.hilight {
+    background-color: #18191a;
     color: whitesmoke;
-    padding: 0 3px;
+    padding: 2px;
+    border-radius: unset;
 }
 
-.did-you-know, .timeline {
-    margin-top: 20px;
+.blg-p {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.3rem;
+    font-weight: 530;
+    line-height: 1.6;
 }
 
-.did-you-know p {
-    padding-top: 0px;
-    margin-top: 0px;
+.heanding {
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 550;
+    font-size: 1.4rem;
+    line-height: 1;
 }
 
-
-.timeline p {
-    padding-top: 0;
-    margin: 3px 2px;
-    border-bottom: 1px dotted #CCC;
+.methodology p {
+    line-height: 1.3;
+    margin-bottom: 5px;
 }
 
-p.timeline-last-para {
-    border-bottom-style: none;
+.acknowlegement {
+    margin-top: 2.5em;
 }
 
+.acknowlegement p {
+    line-height: 1.3;
+    color: rgb(118, 118, 118);
+    font-size: 13px;
+}   
