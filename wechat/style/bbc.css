@@ -30,4 +30,15 @@
 
 .bbc-title {
     line-height: 1.1;
+    border-bottom: 1pt  #3F3F42 solid;
+    padding-bottom: 1em;
+}
+
+.illus {
+    background-color: #3F3F42;
+    color: #FFFFFF;
+    font-size: 12pt;
+    font-family: sans-serif;
+    line-height: 1.5;
+    padding: 1em;
 }
