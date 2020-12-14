@@ -1,21 +1,71 @@
-.sec {
+.prelude {
+    padding: 1em;
+    border-bottom: 1pt #d7d7d7 solid;
+    border-top: 1pt #d7d7d7 solid;
+}
+    
+.tel-col {
     font-family: sans-serif;
     font-size: 12pt;
-    font-weight: 600;
+    font-weight: normal;
     text-transform: uppercase;
-    color: #b41a19;
+    text-align: center;
+    color: #b30000;
+    padding: 0;
+    margin: 0;
 }
 
-.title {
-    font-family: sans-serif;
-    font-size: 20pt;
-    font-weight: 500;
-    text-transform: uppercase;
-    line-height: normal;
-    margin-top: 2px;
-    margin-bottom: 0;
+.tel-title {
+    font-family: Charter,Palatino, Georgia, serif;
+    font-size: 25pt;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
     padding: 0;
-    width: 40%;
+    margin: 0;
+    
+}
+
+.tel-subtitle {
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    text-align: center;
+    line-height: 1.5;
+    padding: 0;
+    margin-top: 5pt;
+
+}
+
+.header-img {
+    width: 100%;
+}
+
+.byline {
+    line-height: 1;
+}
+
+.byline p {
+    font-size: 12pt;
+    padding: 0;
+    margin: .325rem;
+    color: #595959;
+}
+
+.byline-time {
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.byline-author {
+    font-weight: 400;
+    text-transform: uppercase;    
+}
+
+
+.tel-p {
+    font-family: Palatino, Georgia, serif;
+    line-height: 1.6;
+    font-size: 17pt;
 }
 
 .intro {
