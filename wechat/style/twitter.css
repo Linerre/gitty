@@ -1,9 +1,48 @@
 .twitter {
-    font-family: Helvetica, Arial, sans-serif;
-    color: rgba(29,161,242,1.00);
-    color: rgb(197,31,93);
-    color: rgb(136, 153, 166);
-    color: rgb(20,29,38);
-    color: rgb(255, 255, 255);
-    background-color: rgb(36,52,71);
+    border: 1px rgb(204, 214, 221) solid;
+    border-radius: 15px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 500px;
 }
+
+.container {
+    padding: 5px 2px 2px 2px;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile {
+    padding-top: 5px;
+    display: flex;
+    align-items: stretch;
+}
+
+.profile-avatar {
+    background-image: url('https://pbs.twimg.com/profile_images/1079782594701656064/UdoaY8gn_normal.jpg');
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    border: 1px solid limegreen;
+}
+
+.profile-userinfo {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+}
+
+/*.userinfo {
+    display: flex;
+}*/
+
+.userinfo-alias {
+    font-size: 20px;
+}
+
