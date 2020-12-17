@@ -115,3 +115,87 @@
 .tweet-img img {
     border-radius: 15px;
 }
+
+
+.date-declaration {
+    display: flex;
+    align-items: center;
+    border: 2pt pink solid;
+    padding: 0;
+    
+}
+
+.date-time {
+    border: 2pt lightblue dashed;
+    padding: 0;
+}
+
+.date-time span {
+    font-family: sans-serif;
+    font-weight: 300;
+    color: rgb(101, 119, 134);    
+}
+
+.declaration-info {
+    margin-left: auto;
+    border: lightcyan 2pt solid;
+    padding: 0;
+}
+
+.declaration-info svg {
+    width: 22px;
+    height: 20px;
+    padding: 0;
+    margin: 0;
+    fill: rgb(101, 119, 134);
+}
+
+.tweet-stats {
+    display: flex;
+    align-items: stretch;
+    border-top: 1px solid rgb(204, 214, 221);
+    padding-top: 4px;
+    margin-top: 4px;
+}
+
+.tweet-stats-likes {
+    display: flex;
+    flex-basis: auto;
+    align-items: center;
+    
+}
+
+.likes-icon svg {
+    width: 28px;
+    height: 28px;
+    fill: rgb(101, 119, 134);
+    padding: 0;
+}
+
+.likes-stats {
+    font-family: sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color:  rgb(101, 119, 134);;
+    padding: 0;
+}
+
+.tweet-stats-ret {
+    display: flex;
+    align-items: center;  
+}
+
+.ret-icon svg {
+    width: 28px;
+    height: 28px;
+    fill: rgb(101, 119, 134);
+    padding: 0;  
+}
+
+.ret-stats {
+    font-family: sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color:  rgb(101, 119, 134);;
+    padding: 0;
+}
