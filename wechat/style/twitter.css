@@ -10,6 +10,7 @@
     margin: 5px 2px;
     padding: 0 2px 2px 2px;
     display: flex;
+    flex-direction: column;
     border: 1pt yellowgreen solid;
     
 }
@@ -90,4 +91,27 @@
     height: 25px;
     margin: 1px;
     fill: rgb(29, 161, 242);
+}
+
+.tweet-container {
+    border: 2pt #57068c dashed;
+}
+
+.tweet-container {
+    padding: 0 2px;
+    font-family: sans-serif;
+    font-size: 18px;
+    
+}
+
+.tag {
+    color: rgb(29, 161, 242);
+}
+
+.tweet-img-container {
+    border: 3pt red dashed;
+}
+
+.tweet-img img {
+    border-radius: 15px;
 }
