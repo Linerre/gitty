@@ -1,9 +1,7 @@
 .twitter {
     border: 1px rgb(204, 214, 221) solid;
     border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    height: 500px;
+    height: auto;
 }
 
 .container {
@@ -19,8 +17,6 @@
     display: flex;
     flex-basis: auto;
     align-items: stretch;
-    flex: 1 4 4;
-    flex-shrink: 0;
     position: relative;
     width: 100%;
     border: 3pt purple solid;
@@ -162,7 +158,6 @@
 
 .tweet-stats-likes {
     display: flex;
-    flex-basis: auto;
     align-items: center;
     margin-right: 10px;
     
