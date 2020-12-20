@@ -45,17 +45,9 @@ a {
     border-bottom: 1px solid #5e81ac;
 }
 
-blockquote, q {
-    border-left: 4px solid #DDD;
-    padding: 0 1em;
-    quotes: none;
-  }
-  
-blockquote::before, blockquote::after, q::before, q::after {
-    content: none;
-}
 
-blockquote p {
+
+section p {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 12pt;
     line-height: normal;
@@ -68,7 +60,31 @@ hr {
     margin: 0.5em 0;
     color: #4C566A;
 }
+
+/* ------------------------------------------- */
 /* wikipedia */
+.wiki {
+    background-color: #D8DEE9;
+    /* background-color: #f8f9fa; */
+    border: 1pt solid #4c566a;
+    padding: 0 0.25rem;
+    margin: 1px;
+    line-height: normal;
+}
+
+.wiki-content {
+    padding: 0;
+    margin: 1px;
+    height: 150px;
+    overflow-y: scroll;
+    scrollbar-color: #81A1C1;
+    scrollbar-width: thin;    
+}
+
+.wiki-heading {
+    padding: 0;
+    margin: 0;
+}
 .wiki-title {
     /* display: block; */
     font-variant: small-caps;
@@ -79,20 +95,6 @@ hr {
     padding: 0;
 }
 
-.wiki {
-    background-color: #D8DEE9;
-    /* background-color: #f8f9fa; */
-    border: 1pt solid #4c566a;
-    padding: 0.2em 0.5em;
-    margin: 2px;
-    line-height: normal;
-    height: 150px;
-    overflow-y: scroll;
-    scrollbar-color: #81A1C1;
-    scrollbar-width: thin;
-    
-}
-
 .wiki-entry {
     border-bottom: 0.5pt solid #4C566A; 
     font-size: 11pt; 
@@ -101,27 +103,23 @@ hr {
     padding-bottom: 1px;
 }
 
-.wiki-text {
-    /* border: khaki 1pt solid; */
-    font-size: 11pt;
-}
-
 .wiki-img {
     display: block;
     float: right;
     padding-left: 1em;
     width: 30%;
 }
+/* ------------------------------------------- */
 
-
-
+/* ------------------------------------------- */
 /* reference/footnote*/
 .ft {
     padding-left: 0.2em;
     border: 1pt solid #88C0D0;
     margin: 2px;
-    padding: 0.1em 0.1em 0.1em 0.5em;
+    padding: 0.1em 0.1em 0.1em 0.2em;
 }
+
 .ft-title {
     color: #88C0D0;
     font-family: Verdana, Tahoma, sans-serif;
@@ -131,10 +129,11 @@ hr {
     margin: 0px;
 }
 
-/* footnote content */
-.ft-con {
-    border-bottom: #3d7e9a 1pt solid;
-    padding-bottom: 2pt;
+.ft-links {
+    height: 120px;
+    overflow-y: scroll;
+    scrollbar-color: #81A1C1;
+    scrollbar-width: thin;   
 }
 
 ol {
@@ -146,28 +145,16 @@ ol {
 }
 
 ol li {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Georgia, Times, serif;
     font-size: 12pt;
     word-wrap: break-word;
     color: #5E81AC;
     line-height: normal;
-    padding-left: 0.1em;
+    padding-left: 0;
     margin: 1px;
     padding-top: 0;   
 }
 
-/* general dl and dt */
-dl dt {
-    list-style: none;
-}
-
-dl dd {
-    list-style: none;
-}
-
-.dict dd {
-    padding-left: 0.5em;
-}
 /* paraphrase */
 .pp {
     font-family: 'Times New Roman', Times, serif;
@@ -210,39 +197,60 @@ u {
     border-radius: unset;
 }
 
-
-
-
-/* summary */
-.summary {
-    font-size: 14pt;
-    font-family: 'Times New Roman', Times, serif;
-    border: 1pt solid #A3BE8C;
-    padding-left: 0.5em;
+/* editor note */
+.note {
+    border: 1pt solid #B48EAD;
+    padding-left: 0.2rem;
     line-height: normal;
-    margin: 2px;
+    margin: 1px;
 }
 
-.summary-title {
+
+.note-title {
     font-family: Verdana, Tahoma, sans-serif;
     font-weight: bold;
     font-size: 12pt;
-    color: #A3BE8C;
+    color: #B48EAD;
+    padding: 0;
+    margin: 0;
 }
 
-.summary ul {
-    padding:0 0.5em;
-    margin: 2px 2px;
 
+.note-content {
+    height: 125px;
+    overflow-y: scroll;
+    scrollbar-width: thin;
 }
-.summary ul li {
-    font-size: 12pt;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    margin: 2px 0;
-    padding-left: 0.4em;
+
+.note-short {
+    height: auto; 
+    overflow-y: unset;
+}
+
+.bias {
+    border: 1pt solid #BF616A;
+    padding-left: 0.5em;
     line-height: normal;
-    list-style-type: '♦';
+    margin: 2px;
+    height: 125px;
+    overflow-y: scroll;
+    scrollbar-width: thin;
 }
+
+.bias-title {
+    font-family: Verdana, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 12pt;
+    color: #BF616A;
+}
+
+.note p, .bias p {
+    font-size: 12pt;
+    font-family: Georgia, Times, serif;
+    margin: 4px 0;
+    line-height: normal;
+}
+
 
 /* sentence pattern */
 .sentence-pattern {
@@ -284,75 +292,4 @@ u {
     line-height: 2;  
 }
     
-/* editor note */
-.note {
-    border: 1pt solid #B48EAD;
-    padding-left: 0.5em;
-    line-height: normal;
-    margin: 2px;
-    height: 125px;
-    overflow-y: scroll;
-    scrollbar-width: thin;
-}
 
-.bias {
-    border: 1pt solid #BF616A;
-    padding-left: 0.5em;
-    line-height: normal;
-    margin: 2px;
-    height: 125px;
-    overflow-y: scroll;
-    scrollbar-width: thin;
-}
-
-.note-short {
-    height: auto; 
-    overflow-y: unset;
-}
-
-.note-title {
-    font-family: Verdana, Tahoma, sans-serif;
-    font-weight: bold;
-    font-size: 12pt;
-    color: #B48EAD;
-}
-
-.bias-title {
-    font-family: Verdana, Tahoma, sans-serif;
-    font-weight: bold;
-    font-size: 12pt;
-    color: #BF616A;
-}
-
-.note p, .bias p {
-    font-size: 12pt;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    margin: 4px 0;
-    line-height: normal;
-}
-
-.old {
-    margin-top: 20px;
-    padding-top: 1em;
-    border-top: 2px solid #3d7e9a;
-}
-
-.old-title {
-    font-size: 16pt;
-    font-style: normal;
-    text-align: left;
-}
-
-.old ul {
-    list-style-type: disc;
-}
-
-.old li {
-    padding-left: 1em;
-    margin-bottom: 0.8em;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.old a {
-    border-bottom: unset;
-}
