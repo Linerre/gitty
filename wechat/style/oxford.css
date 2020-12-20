@@ -8,6 +8,7 @@
     /*border: 2pt pink solid;*/
 }
 
+
 .ox-dict-band {
     background-color: #01356F;
     color: #FFF;
@@ -51,8 +52,13 @@
     font-size: 12pt;
     font-family: "Lucida Sans Unicode", sans-serif;
     color: #333333;
-    margin: 0;
+    margin: 2px 0;
     padding: 0;
+}
+
+.ox-phon {
+    margin-left: 2px;
+    letter-spacing: 1px;
 }
 
 .ox-senses_multiple {
@@ -68,17 +74,23 @@
     padding-left: 2px;
 }
 
+.ox-sense-prefix {
+    display: flex;
+    align-items: center;
+    border: 2pt blue dashed;
+}
+
+
 .ox-sense-num {
-    display: inline-block;
     background-color: #8F0610;
     background-color: #E51059;
     background-color: #C91352;
     color: #FFFFFF;
     text-align: center;
-    line-height: 80%;
+    line-height: 90%;
     width: 1em;
     height: 1em;
-    margin-top: 1px;
+    margin: 1px 5px 1px 0px;
     padding: 0.1em 0.1em;
     border-radius: 50%;
 }
@@ -90,15 +102,20 @@
 
 .ox-sense-gram {
     color: #6F6F6F;
+    margin-left: 5px;
 }
 
-.ox-examples {
-    color: #6F6F6F;
+.ox-example-multiple {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    /*color: #6F6F6F;*/
     padding-left: 0;
     margin: 0.5rem 0px;
 }
 .ox-example {
     font-style: italic;
+    color: #333333;
 }
 
 .ox-topics {
