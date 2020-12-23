@@ -175,5 +175,23 @@
 .ox-supplement-cont {
     margin: 0;
     background-color: #FDF3F0;
-    padding: 1rem 0rem 0.5rem 1rem;
+    padding: 1rem 0rem 0.5rem 0rem;
+}
+
+.ox-supplement-cont p {
+    margin-left: 1rem;
+}
+
+.ox-supplement-cont ul {
+    margin-left: 0;
+    padding-left: 0;
+    margin-top: 0;
+    list-style-position: outside;
+}
+
+ul li {
+    padding-left: 0;
+    font-style: italic;
+    font-size: 11pt;
+    line-height: 1.5;
 }
