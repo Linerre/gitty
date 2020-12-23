@@ -51,7 +51,7 @@
     font-size: 11pt;
     font-family: "Lucida Sans Unicode", sans-serif;
     color: #333333;
-    margin: 2px 0;
+    margin: 0.3rem 0;
     padding: 0;
 }
 
@@ -67,7 +67,7 @@
 
 .ox-senses_multiple {
     padding: 0;
-    margin: 0;
+    margin: 0.3rem 0rem;
 }
 
 
@@ -113,6 +113,21 @@
     margin-left: 2px;
 }
 
+.ox-synonym {
+    margin: 0.3rem 0.1rem;
+}
+
+.ox-synonym small {
+    font-family: sans-serif;
+    text-transform: uppercase;
+}
+
+.ox-synonym span {
+    font-family: sans-serif;
+    font-weight: 550;
+    color: #1A3561;
+}
+
 .ox-example-multiple {
     display: flex;
     flex-direction: column;
@@ -126,6 +141,7 @@
     font-family: sans-serif;
     font-size: 14px;
     color: #333333;
+    line-height: 1.5;
 }
 
 .ox-topics {
@@ -175,11 +191,11 @@
 .ox-supplement-cont {
     margin: 0;
     background-color: #FDF3F0;
-    padding: 1rem 0rem 0.5rem 0rem;
+    padding: 0.5rem 0rem 0.5rem 0rem;
 }
 
 .ox-supplement-cont p {
-    margin-left: 1rem;
+    margin-left: 0.5rem;
 }
 
 .ox-supplement-cont ul {
