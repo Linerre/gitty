@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: stretch;
     margin: 0;
-    padding: 0 2px;
+    padding: 0 0;
     width: 100%;
     /*border: 2pt pink solid;*/
 }
@@ -51,7 +51,7 @@
     font-size: 11pt;
     font-family: "Lucida Sans Unicode", sans-serif;
     color: #333333;
-    margin: 0.3rem 0;
+    margin: 0.2rem 0;
     padding: 0;
 }
 
@@ -124,7 +124,7 @@
 
 .ox-synonym span {
     font-family: sans-serif;
-    font-weight: 550;
+    font-weight: 600;
     color: #1A3561;
 }
 
@@ -185,7 +185,7 @@
 
 .ox-supplement-heading {
     padding:0rem 0rem 0.2rem 0.6rem;
-    font-size: 14pt;
+    font-size: 12pt;
 }
 
 .ox-supplement-cont {
