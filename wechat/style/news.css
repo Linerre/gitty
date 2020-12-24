@@ -1,14 +1,9 @@
-/*
- * NOTE:
- * - The use of browser-specific styles (-moz-, -webkit-) should be avoided.
- *   If used, they may not render correctly for people reading the email in
- *   a different browser than the one from which the email was sent.
- * - The use of state-dependent styles (like a:hover) don't work because they
- *   don't match at the time the styles are made explicit. (In email, styles
- *   must be explicitly applied to all elements -- stylesheets get stripped.)
- */
 
-/* This is the overall wrapper, it should be treated as the `body` section. */
+/* change some default styles */
+
+* {
+    box-sizing: border-box;
+}
 
 p {
     font-family: sans-serif;
@@ -61,6 +56,35 @@ hr {
     color: #4C566A;
 }
 
+ol {
+    line-height: normal;
+    list-style-type: decimal;
+    padding: 0.1em 0.1em 0.1em 1.5em;
+    margin: 0;
+
+}
+
+ol li {
+    font-family: Georgia, Times, serif;
+    font-size: 12pt;
+    word-wrap: break-word;
+    color: #5E81AC;
+    line-height: normal;
+    padding-left: 0;
+    margin: 1px;
+    padding-top: 0;   
+}
+
+
+u {
+    text-decoration: none;
+    /* border-bottom: 1pt solid #81A1C1; */
+    background-color: #88C0D0;
+    border-radius: 0.2em;
+    /* border: none; */
+}
+
+
 /* ------------------------------------------- */
 /* wikipedia */
 .wiki {
@@ -109,6 +133,14 @@ hr {
     padding-left: 1em;
     width: 30%;
 }
+
+.wiki u {
+    text-decoration: none;
+    border-bottom: 0.5pt solid #4C566A;
+    background-color: unset;
+    border-radius: unset;
+}
+
 /* ------------------------------------------- */
 
 /* ------------------------------------------- */
@@ -136,68 +168,11 @@ hr {
     scrollbar-width: thin;   
 }
 
-ol {
-    line-height: normal;
-    list-style-type: decimal;
-    padding: 0.1em 0.1em 0.1em 1.5em;
-    margin: 0;
 
-}
 
-ol li {
-    font-family: Georgia, Times, serif;
-    font-size: 12pt;
-    word-wrap: break-word;
-    color: #5E81AC;
-    line-height: normal;
-    padding-left: 0;
-    margin: 1px;
-    padding-top: 0;   
-}
 
-/* paraphrase */
-.pp {
-    font-family: 'Times New Roman', Times, serif;
-    border: 1pt solid #EBCB8B;
-    padding-left: 0.5em;
-    line-height: 1;
-    margin: 2px;
-}
 
-/* .pp p {
-    font-size: 12pt;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    margin: 4px 0;
-    line-height: normal;
-} */
-
-.pp-title {
-    font-family: Verdana, Tahoma, sans-serif;
-    font-weight: bold;
-    font-size: 12pt;
-    color: #EBCB8B;
-}
-
-u {
-    text-decoration: none;
-    /* border-bottom: 1pt solid #81A1C1; */
-    background-color: #88C0D0;
-    border-radius: 0.2em;
-    /* border: none; */
-}
-
-.u-mark {
-    margin-left: 2px;
-    color:#EBCB8B;
-}
-.wiki u {
-    text-decoration: none;
-    border-bottom: 0.5pt solid #4C566A;
-    background-color: unset;
-    border-radius: unset;
-}
-
-/* editor note */
+/* editor note: murmurs */
 .note {
     border: 1pt solid #B48EAD;
     padding-left: 0.2rem;
@@ -227,6 +202,8 @@ u {
     overflow-y: unset;
 }
 
+
+/* ---------------- bias deprecated ------------- */
 .bias {
     border: 1pt solid #BF616A;
     padding-left: 0.5em;
@@ -251,45 +228,5 @@ u {
     line-height: normal;
 }
 
-
-/* sentence pattern */
-.sentence-pattern {
-    border: 1pt solid #88C0D0;
-    padding-left: 0.5em;
-    line-height: normal;
-    margin: 2px;
-}
-
-.sentence-pattern-title {
-    font-family: Verdana, Tahoma, sans-serif;
-    font-weight: bold;
-    font-size: 12pt;
-    color: #88C0D0;
-}
-
-.pattern-num {
-    font-size: inherit;
-    font-family: inherit;
-    font-size: 12pt;
-    text-transform: capitalize;
-    /* font-variant: small-caps; */
-    line-height: inherit;
-    padding: 0;
-    margin: 0;
-}
-
-.pattern-explain {
-    font-size: inherit;
-    font-family: inherit;
-    font-size: 13pt;
-    line-height: inherit;
-    padding: 0;
-    margin: 0.5em 0;
-}
-
-.pattern-explain span {
-    border-bottom: #81A1C1 1pt solid; 
-    line-height: 2;  
-}
     
 
