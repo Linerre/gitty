@@ -203,30 +203,5 @@ u {
 }
 
 
-/* ---------------- bias deprecated ------------- */
-.bias {
-    border: 1pt solid #BF616A;
-    padding-left: 0.5em;
-    line-height: normal;
-    margin: 2px;
-    height: 125px;
-    overflow-y: scroll;
-    scrollbar-width: thin;
-}
-
-.bias-title {
-    font-family: Verdana, Tahoma, sans-serif;
-    font-weight: bold;
-    font-size: 12pt;
-    color: #BF616A;
-}
-
-.note p, .bias p {
-    font-size: 12pt;
-    font-family: Georgia, Times, serif;
-    margin: 4px 0;
-    line-height: normal;
-}
-
     
 
