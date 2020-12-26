@@ -45,6 +45,7 @@
 }
 
 .byline p {
+    font-family: sans-serif;
     font-size: 12pt;
     padding: 0;
     margin: .325rem;
