@@ -96,15 +96,6 @@ u {
     line-height: normal;
 }
 
-.wiki-content {
-    padding: 0;
-    margin: 1px;
-    height: 150px;
-    overflow-y: scroll;
-    scrollbar-color: #81A1C1;
-    scrollbar-width: thin;    
-}
-
 .wiki-heading {
     padding: 0;
     margin: 0;
@@ -127,13 +118,65 @@ u {
     padding-bottom: 1px;
 }
 
-.wiki-img {
-    display: block;
-    float: right;
-    padding-left: 1em;
-    width: 30%;
+.wiki-content {
+    padding: 0;
+    margin: 1px;
+    height: 150px;
+    overflow-y: scroll;
+    scrollbar-color: #81A1C1;
+    scrollbar-width: thin;    
 }
 
+.wiki-content>p {
+    margin-top: .3rem;
+}
+
+.wiki-with-large-img {
+    min-height: 300px;
+}
+
+
+
+.wiki-large-img {
+    display: flex;
+    flex-flow: column;
+    margin: .2rem;
+/*    border: 1pt blue dashed;*/
+}
+
+.wiki-large-img figcaption, .wiki-small-img figcaption {
+    font-family: sans-serif;
+    font-size: 13px;
+    font-style: italic;
+    padding: 3px;
+    text-align: center;
+    /*background-color: #222222;*/
+    color: #222;
+}
+.wiki-large-img img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.wiki-with-small-img {
+    min-height: 200px;
+}
+.wiki-with-small-img>p {
+    clear: left;
+}
+.wiki-small-img {
+    float: right;
+    /*clear: right;*/
+    width: 30%;
+    margin: 5px 1px;
+    /*border: 1pt green dashed;*/
+}
+
+.wiki-small-img img {
+    width: 100%;
+    height: auto;
+}
 .wiki u {
     text-decoration: none;
     border-bottom: 0.5pt solid #4C566A;
