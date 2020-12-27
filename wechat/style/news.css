@@ -258,3 +258,25 @@ u {
     padding: 0;
     margin: 0;
 }
+
+.illus {
+    display: flex;
+    flex-direction: column;
+    /*justify-content: center;*/
+    align-items: center;
+    /*border: 1pt limegreen dashed;*/
+    margin: 1rem 0rem;
+}
+
+.illus img {
+    width: 100%;
+    padding: .2rem;
+}
+
+.illus figcaption {
+    font-family: serif;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 500;
+    color: #333;
+}
