@@ -62,6 +62,16 @@
     text-transform: uppercase;    
 }
 
+.te-drop {
+    float: left;
+    clear: right;
+    font-family: serif;
+    font-size: 350%;
+    font-weight: 900;
+    line-height: 80%;
+    padding-top: 5px;
+    margin-right: 5px;
+}
 
 .tel-p {
     font-family: Palatino, Georgia, serif;
