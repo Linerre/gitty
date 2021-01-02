@@ -8,3 +8,6 @@ wechat/node_modules/
 *.json
 *.js
 
+# ignore notebook file
+*ipynb*
+
