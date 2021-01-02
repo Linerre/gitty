@@ -22,14 +22,18 @@ class Parse(HTMLParser):
         # use this counter as a switch
         self.para_counter = 0
         self.nested_counter = 0
-        #self.initial_counter = 0
-        self.paras = []
+        # List is not empty to let the first dropped letter
+        # have an achor to attach itself to
+        # otherwise it will try to find list[-1] of an empty list
+        self.paras = ['']
         super().__init__()
         self.reset()
     
     # Defining what the methods should output when called by HTMLParser.
     def handle_starttag(self, tag, attrs):
-        if tag != 'p' and tag != 'small' and tag != 'em':
+        # small and em tag to handle a few TE styled words
+        # span tag to specifically handle the EOF, a square
+        if tag != 'p' and tag != 'small' and tag != 'em' and tag != 'span':
             return
         if self.para_counter:
             # because in this case only
@@ -52,20 +56,20 @@ class Parse(HTMLParser):
         # if such p contains child tag
         # the child tag's data will be read first
         # before the counter reduces to 0 again
-        if tag == 'p' and self.para_counter \
-            and self.nested_counter:
+        if tag == 'p' and self.para_counter and self.nested_counter:
             self.nested_counter -= 1
             self.para_counter -= 1
-        elif tag == 'p' and self.para_counter \
-            and not self.nested_counter:
+        elif tag == 'p' and self.para_counter and not self.nested_counter:
             self.para_counter -= 1
 
     def handle_data(self, data):
-        if self.para_counter and \
-        not self.nested_counter:
+        if self.para_counter and not self.nested_counter:
             self.paras.append(data)
         elif self.nested_counter:
-            self.paras[-1] = self.paras[-1] + data
+            try:
+                self.paras[-1] = self.paras[-1] + data
+            except Exception:
+                print(Exception)
 
     def get_data(self):
 #         print(len(self.paras))
