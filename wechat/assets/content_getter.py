@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 
+# scrape a article page from TE's 1843 long reads
+# and collect all the paragraphs, including the photographer's bio
+
 # It seems html.parser's methods can be defined within a class
 # in an artbitrary order
 # while the parser itself parses html string in the order of
@@ -9,9 +12,8 @@ from sys import argv
 from html.parser import HTMLParser
 from urllib.request import urlopen
 
-script, link = argv
 
-url = urlopen(link)
+url = urlopen(argv[1])
 html = url.read().decode('UTF-8')
 url.close()
 
@@ -33,20 +35,17 @@ class Parse(HTMLParser):
     def handle_starttag(self, tag, attrs):
         # small and em tag to handle a few TE styled words
         # span tag to specifically handle the EOF, a square
-        if tag != 'p' and tag != 'small' and tag != 'em' and tag != 'span':
+        if tag != 'p' and tag != 'small' and tag != 'em' and tag != 'span' and tag != 'strong':
             return
         if self.para_counter:
-            # because in this case only
-            # small or em will be nested
+            # because in the case of TE 
+            # only small or em or span or strong will be nested
             self.nested_counter += 1
             return
         # only parse body paras:
         for attr, val in attrs:
             if attr == 'class' and 'article__body-text' in val:
                 break
-            #elif self.nested_counter and (attr == 'class' and val == 'initial'):
-            #    self.initial_counter += 1
-            #    break 
         else:
             return
         # if encounter any body para, count 1
