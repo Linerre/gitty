@@ -3,7 +3,6 @@
 # scrape an article page from TE 1843 long reads
 # and collect its header content
 
-import requests
 from sys import argv
 from html.parser import HTMLParser
 from urllib.request import urlopen
@@ -67,8 +66,3 @@ class Parser(HTMLParser):
             return self.header
         else:
             print('Header has more than 3 elements.')
-
-
-test = Parser()
-test.feed(html)
-print(test.get_header())
