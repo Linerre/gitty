@@ -17,7 +17,7 @@ url = urlopen(argv[1])
 html = url.read().decode('UTF-8')
 url.close()
 
-class Parse(HTMLParser):
+class ParseBodyParas(HTMLParser):
     def __init__(self):
     # Since Python 3, we need to call the __init__() function 
     # of the parent class
@@ -85,9 +85,3 @@ class Parse(HTMLParser):
         return self.paras
 
 
-test_parse = Parse()
-test_parse.feed(html)
-print(test_parse.get_data())
-with open('te-1843-body.html', 'w', encoding='utf-8') as body:
-    for para in test_parse.process_data():
-        body.write(para+'\n\n')
