@@ -1,15 +1,16 @@
 # TODO
 - script to scrape articles (python):
-	- title
-	- author
-	- paras
+	- [X] title
+	- [ ] byline
+	- [X] paras
+	- [X] img
 
 - partials design:
-	- dicts
-	- svg
-	- header
-	- footer
-	- twitter
+	- [ ] dicts
+	- [ ] svg
+	- [ ] header
+	- [ ] footer
+	- [ ] twitter
 
 - template engine of choice:
 	- [Jinja2](https://jinja2docs.readthedocs.io/en/stable/) (prefered)
