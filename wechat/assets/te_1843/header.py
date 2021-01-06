@@ -3,17 +3,11 @@
 # scrape an article page from TE 1843 long reads
 # and collect its header content
 
-from sys import argv
 from html.parser import HTMLParser
 from urllib.request import urlopen
 
 
-url = urlopen(argv[1])
-html = url.read().decode('UTF-8')
-url.close()
-
-
-class Parser(HTMLParser):
+class GetHeader(HTMLParser):
     def __init__(self):
         self.record_subheadline = 0
         self.record_headline = 0
