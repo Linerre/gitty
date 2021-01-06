@@ -1,23 +1,12 @@
 #!/usr/bin/env python3
 
-# scrape a article page from TE's 1843 long reads
-# and collect all the paragraphs, including the photographer's bio
+# scrape an article page from TE 1843 long reads
+# and collect its paragraphs including body paragraphs, 
+# byline and acknowledgements for illustration 
 
-# It seems html.parser's methods can be defined within a class
-# in an artbitrary order
-# while the parser itself parses html string in the order of
-# handle_starttag => handle_data (if any) => handle_endtag
-
-from sys import argv
 from html.parser import HTMLParser
-from urllib.request import urlopen
 
-
-url = urlopen(argv[1])
-html = url.read().decode('UTF-8')
-url.close()
-
-class ParseBodyParas(HTMLParser):
+class GetBody(HTMLParser):
     def __init__(self):
     # Since Python 3, we need to call the __init__() function 
     # of the parent class
@@ -65,13 +54,9 @@ class ParseBodyParas(HTMLParser):
         if self.para_counter and not self.nested_counter:
             self.paras.append(data)
         elif self.nested_counter:
-            try:
-                self.paras[-1] = self.paras[-1] + data
-            except Exception:
-                print(Exception)
+            self.paras[-1] = self.paras[-1] + data
 
     def get_data(self):
-#         print(len(self.paras))
         return self.paras 
 
 
@@ -83,5 +68,3 @@ class ParseBodyParas(HTMLParser):
             else:
                 self.paras[i] = '<p class="tel-p">' + self.paras[i] + '</p>'
         return self.paras
-
-
