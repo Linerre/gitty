@@ -8,7 +8,6 @@
 import requests
 from pathlib import Path
 from html.parser import HTMLParser
-from urllib.request import urlopen
 
 
 class GetImage(HTMLParser):
@@ -42,17 +41,16 @@ class GetImage(HTMLParser):
         return
 
     def store_imgs(self, path):
+        # mkdir img/ if it does not exist yet
+        if not Path(path).exists(): Path('img').mkdir()
+
         with requests.Session() as s: 
             for i in range(len(self.img_srcs)):
                 r = s.get(self.img_srcs[i]) 
-                if i == 0 and Path(path).exists():
-                    #TODO
-                    # use os to make sure img exists 
+                if i == 0: 
                     with open(f'{path}/header-img.{self.img_srcs[i][-3:]}', 'wb') as img: 
                         img.write(r.content)
                 else:
-                    # or create it if it doesn't
-                    Path('img').mkdir()
                     with open(f'{path}/body-{i}.{self.img_srcs[i][-3:]}', 'wb') as img:
                             img.write(r.content)
 
