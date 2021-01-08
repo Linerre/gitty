@@ -11,3 +11,6 @@ wechat/node_modules/
 # ignore notebook file
 *ipynb*
 
+# ignore pycache
+__pycache__/
+
