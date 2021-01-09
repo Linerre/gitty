@@ -14,3 +14,5 @@ wechat/node_modules/
 # ignore pycache
 __pycache__/
 
+# ignore github libraries
+mstch/
