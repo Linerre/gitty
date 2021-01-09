@@ -21,14 +21,26 @@ class GetHeader(HTMLParser):
         #    self.counter = 1
         if self.counter and tag == 'span':
             self.nested += 1
+        if tag == 'h1':
+            self.counter += 1
+        if tag == 'div' and ('class', 'content-header__row content-header__dek') in attrs:
+            self.counter += 1
 
 
     def handle_data(self, data):
+        # data that has to be extracted by using the parents tag 
+        # in which the data nested in
         if self.counter and self.nested:
             if 'personal_history' not in self.content:
                 self.content['personal_history'] = data
             elif 'issue' not in self.content:
                 self.content['issue'] = data
+        # data that can be extracted directly from the tag containing it 
+        if self.counter and not self.nested:
+            if 'h1' not in self.content:
+                self.content['h1'] = data
+            elif 'h2' not in self.content:
+                self.content['h2'] = data
 
     def handle_endtag(self, tag):
         if self.counter and self.nested:
