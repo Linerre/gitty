@@ -13,17 +13,27 @@ class GetHeader(HTMLParser):
         super().__init__()
 
     def handle_starttag(self, tag, attrs):
-        if tag == 'a':
-            if 'class' in attrs[0] and 'rubric__link' in attrs[0][1]:
-                print(attrs)
-                self.counter += 1
-        #if tag == 'a' and ('class' in attrs and 'rubric__link' in attrs):
-        #    self.counter = 1
+        # column and issue number
+        if tag == 'a' and ('class' in attrs[0] and 'rubric__link' in attrs[0][1]):
+            self.counter += 1
         if self.counter and tag == 'span':
             self.nested += 1
+        if tag == 'a':
+            print(attrs)
+
+        # headline
         if tag == 'h1':
             self.counter += 1
+        # subheadline
         if tag == 'div' and ('class', 'content-header__row content-header__dek') in attrs:
+            self.counter += 1
+        # byline name
+        # somehow the class attr is not included in the scraped result
+        # perhaps it was added by js when rendering the site page
+        if tag == 'a' and ('href' in attrs[0] and 'contributors' in attrs[0][1]):
+            self.counter += 1
+        # online publication date
+        if tag == 'time':
             self.counter += 1
 
 
@@ -41,6 +51,10 @@ class GetHeader(HTMLParser):
                 self.content['h1'] = data
             elif 'h2' not in self.content:
                 self.content['h2'] = data
+            elif 'author' not in self.content:
+                self.content['author'] = data
+            elif 'time' not in self.content:
+                self.content['time'] = data
 
     def handle_endtag(self, tag):
         if self.counter and self.nested:
