@@ -14,7 +14,8 @@ class GetBodyParas(HTMLParser):
         self.dcounter = 0    # count number of paras with dropcap
         self.pcounter = 0    # count number of normal paras
         self.quoteblock = 0  # count quoteblock
-        self.content = {}
+        self.content = {}    # get paragraphs raw data
+        self.paragraphs = {} # formatted paragraphs (i.e. surrounded by html tags)
         super().__init__()
 
     def handle_starttag(self, tag, attrs):
@@ -78,7 +79,21 @@ class GetBodyParas(HTMLParser):
             self.article -= 1
 
     def get_content(self):
-        return self.content 
+        for para_number in list(self.content):
+            if self.content[para_number].get('has_dropcap', 0):
+               self.paragraphs[para_number] = '<p class="first-para">' \
+                                            + ''.join(self.content[para_number]['has_dropcap']) \
+                                            + '</p>'
+            elif self.content[para_number].get('normal_para', 0):
+               self.paragraphs[para_number] = '<p>' \
+                                            + ''.join(self.content[para_number]['normal_para']) \
+                                            + '</p>'
+            elif self.content[para_number].get('quoteblock', 0):
+               self.paragraphs[para_number] = '<p class=>"quotes">' \
+                                            + ''.join(self.content[para_number]['quoteblock']) \
+                                            + '</p>'
+        return self.paragraphs 
+
 
 
 url = urlopen('https://www.newyorker.com/magazine/2019/11/25/my-life-as-a-child-chef')
