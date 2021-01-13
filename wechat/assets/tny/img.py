@@ -8,7 +8,7 @@
 import requests
 from pathlib import Path
 from html.parser import HTMLParser
-
+from urllib.request import urlopen
 
 
 class GetImages(HTMLParser):
@@ -26,20 +26,37 @@ class GetImages(HTMLParser):
             self.img_counter += 1
             # suppose all img tags are like: <img class="xxx" alt="yyy" src="url">
             self.img_srcs[self.img_counter] = {'src': attrs[2][1]}
+        for attr, val in attrs:
+            if tag == 'span':
+                print('attri is: ', attr, 'value is: ', val)
         # caption text span
-        elif tag == 'span' and ('class' in attrs and 'caption_text' in attrs[1]):
-            self.caption_text_recording += 1
-        # caption credit span
-        elif tag == 'span' and ('class' in attrs and 'caption_credit' in attrs[1]):
-            self.caption_credit_recording += 1
+        #elif tag == 'span' and ('class' in attrs and 'caption__text' in attrs[1]):
+        #    self.caption_text_recording += 1
+        ## caption credit span
+        #elif tag == 'span' and ('class' in attrs and 'caption__credit' in attrs[1]):
+        #    self.caption_credit_recording += 1
 
     def handle_data(self, data):
         if self.caption_text_recording:
-            self.img_srcs[self.img_counter].update(('caption_text', data))
+            self.img_srcs[self.img_counter].update([('caption_text', data)])
         elif self.caption_credit_recording:
-            self.img_srcs[self.img_counter].update(('caption_credit', data))
+            self.img_srcs[self.img_counter].update([('caption_credit', data)])
     
     def handle_endtag(self, tag):
-	if self.img_recording:
-	  self.img_recording -= 1
+        if tag == 'img' and self.img_recording:
+            self.img_recording -= 1
+        elif tag == 'span' and self.caption_text_recording:
+            self.caption_text_recording -= 1
+        elif tag == 'span' and self.caption_credit_recording:
+            self.caption_credit_recording -= 1
 
+    def get_content(self):
+        return self.img_srcs
+
+url = urlopen('https://www.newyorker.com/magazine/2019/11/25/my-life-as-a-child-chef')
+html = url.read().decode('UTF-8')
+url.close()
+
+test = GetImages()
+test.feed(html)
+print(test.get_content())
