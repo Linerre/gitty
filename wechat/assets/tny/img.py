@@ -77,11 +77,12 @@ class GetImages(HTMLParser):
                 with open(f'{path}/img-{i}.{self.img_srcs[i]["src"][-3:]}', 'wb') as img:
                     img.write(r.content)
 
-url = urlopen('https://www.newyorker.com/magazine/2019/11/25/my-life-as-a-child-chef')
-html = url.read().decode('UTF-8')
-url.close()
+if __name__ == '__main__':
+    url = urlopen('https://www.newyorker.com/magazine/2019/11/25/my-life-as-a-child-chef')
+    html = url.read().decode('UTF-8')
+    url.close()
 
-test = GetImages()
-test.feed(html)
-print(test.get_content())
-test.download_imgs('img')
+    test = GetImages()
+    test.feed(html)
+    print(test.get_content())
+    test.download_imgs('img')

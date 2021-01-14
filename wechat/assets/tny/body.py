@@ -101,15 +101,14 @@ class GetBodyParas(HTMLParser):
         return self.paragraphs 
 
 
+if __name__ == '__main__':
+    url = urlopen('https://www.newyorker.com/magazine/2019/11/25/my-life-as-a-child-chef')
+    html = url.read().decode('UTF-8')
+    url.close()
 
-url = urlopen('https://www.newyorker.com/magazine/2019/11/25/my-life-as-a-child-chef')
-html = url.read().decode('UTF-8')
-url.close()
-
-
-test = GetBodyParas()
-test.feed(html)
-print(test.get_content())
+    test = GetBodyParas()
+    test.feed(html)
+    print(test.get_content())
 
 
 

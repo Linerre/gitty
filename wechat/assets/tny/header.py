@@ -68,10 +68,12 @@ class GetHeader(HTMLParser):
     def GetContent(self):
         return self.content
     
-url = urlopen('https://www.newyorker.com/magazine/2019/11/25/my-life-as-a-child-chef')
-html = url.read().decode('UTF-8')
-url.close()
 
-test = GetHeader()
-test.feed(html)
-print(test.GetContent())
+if __name__ == '__main__':
+    url = urlopen('https://www.newyorker.com/magazine/2019/11/25/my-life-as-a-child-chef')
+    html = url.read().decode('UTF-8')
+    url.close()
+
+    test = GetHeader()
+    test.feed(html)
+    print(test.GetContent())
