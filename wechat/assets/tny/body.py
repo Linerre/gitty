@@ -14,6 +14,7 @@ class GetBodyParas(HTMLParser):
         self.dcounter = 0    # count number of paras with dropcap
         self.pcounter = 0    # count number of normal paras
         self.quoteblock = 0  # count quoteblock
+        self.footer = 0      # count footer
         self.content = {}    # get paragraphs raw data
         self.paragraphs = {} # formatted paragraphs (i.e. surrounded by html tags)
         super().__init__()
@@ -35,18 +36,15 @@ class GetBodyParas(HTMLParser):
             self.pcounter += 1
             self.pnumber += 1
             self.content[self.pnumber] = {'normal_para': []}
-        #TODO
-        #target at blockquote paragraphs
         # counter paras in quoteblock
         elif tag == 'div' and ('class', 'blockquote-embed__content') in attrs:
             self.pnumber += 1
             self.quoteblock += 1
             self.content[self.pnumber] = {'quoteblock': []}
-        # no need to counte nested tags
-        #if self.counter and (tag == 'a' or tag == 'em'):
-        #    self.nested += 1
-        #    return
-
+        elif tag == 'footer' and ('content-footer__magazine-disclaimer' in attrs[0][1]):
+            self.footer += 1
+            self.pnumber += 1
+            self.content[self.pnumber] = {'footer': []}
 
     def handle_data(self, data):
         """divide paras into two groups:
@@ -64,6 +62,8 @@ class GetBodyParas(HTMLParser):
         # quoteblock paras
         elif self.quoteblock:
             self.content[self.pnumber]['quoteblock'].append(data)
+        elif self.footer:
+            self.content[self.pnumber]['footer'].append(data)
 
 
 
@@ -77,6 +77,8 @@ class GetBodyParas(HTMLParser):
             self.quoteblock -= 1
         elif tag == 'article' and self.article:
             self.article -= 1
+        elif tag == 'footer' and self.footer:
+            self.footer -= 1
 
     def get_content(self):
         for para_number in list(self.content):
@@ -89,8 +91,12 @@ class GetBodyParas(HTMLParser):
                                             + ''.join(self.content[para_number]['normal_para']) \
                                             + '</p>'
             elif self.content[para_number].get('quoteblock', 0):
-               self.paragraphs[para_number] = '<p class=>"quotes">' \
+               self.paragraphs[para_number] = '<p class="quotes">' \
                                             + ''.join(self.content[para_number]['quoteblock']) \
+                                            + '</p>'
+            elif self.content[para_number].get('footer', 0):
+               self.paragraphs[para_number] = '<p class="footer">' \
+                                            + ''.join(self.content[para_number]['footer']) \
                                             + '</p>'
         return self.paragraphs 
 
