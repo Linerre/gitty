@@ -29,7 +29,7 @@ class GetImages(HTMLParser):
             if tag == 'img' and ('class', 'responsive-image__image') in attrs:
                 self.img_recording += 1
                 self.img_counter += 1
-            # suppose all img tags are like: <img class="xxx" alt="yyy" src="url">
+		# suppose all img tags are like: <img class="xxx" alt="yyy" src="url">
                 self.img_srcs[self.img_counter] = {'src': attrs[2][1]}
                 return
         #for attr, val in attrs:
@@ -67,6 +67,16 @@ class GetImages(HTMLParser):
     def get_content(self):
         return self.img_srcs
 
+    def download_imgs(self, path):
+        # mkdir img/ if it does not exist yet
+        if not Path(path).exists(): Path(path).mkdir()
+
+        with requests.Session() as s:
+            for i in list(self.img_srcs):
+                r = s.get(self.img_srcs[i]['src'])
+                with open(f'{path}/img-{i}.{self.img_srcs[i]["src"][-3:]}', 'wb') as img:
+                    img.write(r.content)
+
 url = urlopen('https://www.newyorker.com/magazine/2019/11/25/my-life-as-a-child-chef')
 html = url.read().decode('UTF-8')
 url.close()
@@ -74,3 +84,4 @@ url.close()
 test = GetImages()
 test.feed(html)
 print(test.get_content())
+test.download_imgs('img')
