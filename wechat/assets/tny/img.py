@@ -14,6 +14,7 @@ from urllib.request import urlopen
 class GetImages(HTMLParser):
     def __init__(self):
         super().__init__()
+        self.fig_recording = 0
         self.img_recording = 0
         self.img_counter = 0
         self.caption_text_recording = 0
@@ -21,20 +22,31 @@ class GetImages(HTMLParser):
         self.img_srcs = {}
 
     def handle_starttag(self, tag, attrs):
-        if tag == 'img' and ('class', 'responsive-image__image') in attrs:
-            self.img_recording += 1
-            self.img_counter += 1
+        if tag == 'figure':
+            self.fig_recording += 1
+            return 
+        if self.fig_recording:
+            if tag == 'img' and ('class', 'responsive-image__image') in attrs:
+                self.img_recording += 1
+                self.img_counter += 1
             # suppose all img tags are like: <img class="xxx" alt="yyy" src="url">
-            self.img_srcs[self.img_counter] = {'src': attrs[2][1]}
-        for attr, val in attrs:
-            if tag == 'span':
-                print('attri is: ', attr, 'value is: ', val)
-        # caption text span
-        #elif tag == 'span' and ('class' in attrs and 'caption__text' in attrs[1]):
-        #    self.caption_text_recording += 1
-        ## caption credit span
-        #elif tag == 'span' and ('class' in attrs and 'caption__credit' in attrs[1]):
-        #    self.caption_credit_recording += 1
+                self.img_srcs[self.img_counter] = {'src': attrs[2][1]}
+                return
+        #for attr, val in attrs:
+        #    if tag == 'span' and self.fig_recording:
+        #        print('attrs: ', attrs)
+
+        if tag == 'span' and self.fig_recording:
+            # caption text span
+            # attrs: [('class', 'classa classb classc ...')]
+            if 'class' in attrs[0] and 'caption__text' in attrs[0][1]:
+                self.caption_text_recording += 1
+                return
+
+            ## caption credit span
+            elif 'class' in attrs[0] and 'caption__credit' in attrs[0][1]:
+                self.caption_credit_recording += 1
+                return
 
     def handle_data(self, data):
         if self.caption_text_recording:
@@ -43,6 +55,8 @@ class GetImages(HTMLParser):
             self.img_srcs[self.img_counter].update([('caption_credit', data)])
     
     def handle_endtag(self, tag):
+        if tag == 'figure' and self.fig_recording:
+            self.fig_recording -= 1
         if tag == 'img' and self.img_recording:
             self.img_recording -= 1
         elif tag == 'span' and self.caption_text_recording:
