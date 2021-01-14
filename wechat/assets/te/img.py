@@ -6,6 +6,8 @@
 # `telongreads.py` file
 
 import requests
+from sys import argv
+from urllib.request import urlopen
 from pathlib import Path
 from html.parser import HTMLParser
 
@@ -55,11 +57,11 @@ class GetImage(HTMLParser):
                             img.write(r.content)
 
 
-
-#url = urlopen(argv[1])
-#html = url.read().decode('UTF-8')
-#url.close()
-#test = GetImage()
-#test.feed(html)
-#test.get_result()
-#test.store_imgs('img')
+if __name__ == '__main__':
+    url = urlopen(argv[1])
+    html = url.read().decode('UTF-8')
+    url.close()
+    test = GetImage()
+    test.feed(html)
+    test.get_result()
+    test.download_imgs('img')

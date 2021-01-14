@@ -3,6 +3,7 @@
 # scrape an article page from TE 1843 long reads
 # and collect its header content
 
+from sys import argv
 from html.parser import HTMLParser
 from urllib.request import urlopen
 
@@ -20,9 +21,11 @@ class GetHeader(HTMLParser):
         #self.reset()
 
     def handle_starttag(self, tag, attrs):
+        #TODO
+        # rewrite this part to improve performance
         for attr, val in attrs:
             # count subheadline, headline, description respectively
-            if attr == 'class' and val == 'article__subheadline':
+            if tag == 'span' and attr == 'class' and val == 'article__subheadline':
                 self.record_subheadline += 1
                 break
             elif attr == 'class' and val == 'article__headline':
@@ -54,9 +57,17 @@ class GetHeader(HTMLParser):
 
     def process_header(self):
         if len(self.header) == 3:
-            self.header[0] = '<h2 class="tel-col">' + self.header + '</h2>'
-            self.header[1] = '<h1 class="tel-title">' + self.header + '</h1>'
-            self.header[2] = '<h3 class="tel-subtitle">' + self.header + '</h3>'
+            self.header[0] = '<h2 class="tel-col">' + self.header[0] + '</h2>'
+            self.header[1] = '<h1 class="tel-title">' + self.header[1] + '</h1>'
+            self.header[2] = '<h3 class="tel-subtitle">' + self.header[2] + '</h3>'
             return self.header
         else:
             print('Header has more than 3 elements.')
+
+if __name__ == '__main__':
+    url = urlopen(argv[1])
+    html = url.read().decode('UTF-8')
+    url.close()
+    test = GetHeader()
+    test.feed(html)
+    print(test.process_header())

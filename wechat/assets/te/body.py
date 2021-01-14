@@ -4,7 +4,9 @@
 # and collect its paragraphs including body paragraphs, 
 # byline and acknowledgements for illustration 
 
+from sys import argv
 from html.parser import HTMLParser
+from urllib.request import urlopen
 
 class GetBody(HTMLParser):
     def __init__(self):
@@ -24,7 +26,8 @@ class GetBody(HTMLParser):
     def handle_starttag(self, tag, attrs):
         # small and em tag to handle a few TE styled words
         # span tag to specifically handle the EOF, a square
-        if tag != 'p' and tag != 'small' and tag != 'em' and tag != 'span' and tag != 'strong':
+        if tag != 'p' and tag != 'small' and tag != 'em' \
+        and tag != 'span' and tag != 'strong':
             return
         if self.para_counter:
             # because in the case of TE 
@@ -63,8 +66,19 @@ class GetBody(HTMLParser):
     def process_data(self):
         for i in range(len(self.paras)):
             if len(self.paras[i]) == 1 and i < len(self.paras) - 1:
-                self.paras[i+1] =  '<span class="te-drop">' + self.paras[i] + '</span>' \
+                self.paras[i+1] =  '<span class="te-drop">' \
+                                + self.paras[i] \
+                                + '</span>' \
                                 + self.paras[i+1]
             else:
                 self.paras[i] = '<p class="tel-p">' + self.paras[i] + '</p>'
         return self.paras
+
+if __name__ == '__main__':
+    url = urlopen(argv[1])
+    html = url.read().decode('UTF-8')
+    url.close()
+    test = GetBody()
+    test.feed(html)
+    print(test.process_data())
+    
