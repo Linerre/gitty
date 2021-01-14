@@ -40,7 +40,7 @@ class GetImage(HTMLParser):
         print(self.img_srcs)
         return
 
-    def store_imgs(self, path):
+    def download_imgs(self, path):
         # mkdir img/ if it does not exist yet
         if not Path(path).exists(): Path('img').mkdir()
 
