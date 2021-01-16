@@ -10,11 +10,16 @@ import logging
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 import os.path
+from pathlib import Path
 
-project_dir = 'C:\\Users\\zl37\\projects\\gitty\\wechat'
+project_dir = 'C:\\Users\\zl37\\projects\\gitty\\wechat\\'
 article_url = argv[1]
-article_dir = os.path.join(project_dir, str(argv[2])) 
-article_til = argv[3]
+article_src = str(argv[2]) + '\\' 
+article_til = str(argv[3]) 
+article_dir = os.path.join(project_dir, article_src, article_til)
+if not Path(article_dir).exists(): Path(article_dir).mkdir()
+print(article_dir)
+
 
 try:
     # prepare html to feed
@@ -36,19 +41,19 @@ try:
     # create header template
     # header
     headers = te_article_header.process_header()  # a list
-    with open(article_dir + article_til + '\\header.html', 'w', encoding='utf-8') as h:
+    with open(article_dir + '\\header.html', 'w', encoding='utf-8') as h:
         for header in headers:
-            h.write(header)
+            h.write(header+'\n')
 
 
     # body
     paras =  te_article_body.process_data()  # a list
-    with open(article_dir + article_til + '\\body.html', 'w', encoding='utf-8') as b:
+    with open(article_dir + '\\body.html', 'w', encoding='utf-8') as b:
         for para in paras:
-            b.write(para)
+            b.write(para+'\n\n')
 
     # img
-    te_article_img.download_imgs(article_dir+article_til+'\\img')
+    te_article_img.download_imgs(article_dir + '\\img')
 
 
 
