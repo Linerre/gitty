@@ -14,5 +14,5 @@ template = env.get_template('te-base.html')
 
 output = template.render()
 print('output is', output)
-	#with open('test.html', 'w', encoding='utf-8') as test:
-	#	test.write(output)
+with open('test.html', 'w', encoding='utf-8') as test:
+    test.write(output)
