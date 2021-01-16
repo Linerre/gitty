@@ -10,7 +10,7 @@ print(env.list_templates(extensions=["html"]))
     #TODO
     # figure out how this 'parent' argument works
     # and let the lookup order goes deeper
-template = env.get_template('te-temps/te-1843-base.html')
+template = env.get_template('te-base.html')
 
 output = template.render()
 print('output is', output)
