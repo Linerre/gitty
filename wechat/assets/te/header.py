@@ -3,9 +3,7 @@
 # scrape an article page from TE 1843 long reads
 # and collect its header content
 
-from sys import argv
 from html.parser import HTMLParser
-from urllib.request import urlopen
 
 
 class GetHeader(HTMLParser):
@@ -27,13 +25,10 @@ class GetHeader(HTMLParser):
             # count subheadline, headline, description respectively
             if tag == 'span' and attr == 'class' and val == 'article__subheadline':
                 self.record_subheadline += 1
-                break
             elif attr == 'class' and val == 'article__headline':
                 self.record_headline += 1
-                break
             elif attr == 'class' and val == 'article__description':
                 self.record_description += 1
-                break
         else:
             return
 
@@ -65,6 +60,9 @@ class GetHeader(HTMLParser):
             print('Header has more than 3 elements.')
 
 if __name__ == '__main__':
+    from sys import argv
+    from urllib.request import urlopen
+
     url = urlopen(argv[1])
     html = url.read().decode('UTF-8')
     url.close()

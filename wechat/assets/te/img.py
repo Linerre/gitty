@@ -5,9 +5,6 @@
 # it also acts as the prototype of the same class in the main 
 # `telongreads.py` file
 
-import requests
-from sys import argv
-from urllib.request import urlopen
 from pathlib import Path
 from html.parser import HTMLParser
 
@@ -44,7 +41,7 @@ class GetImage(HTMLParser):
 
     def download_imgs(self, path):
         # mkdir img/ if it does not exist yet
-        if not Path(path).exists(): Path('img').mkdir()
+        if not Path(path).exists(): Path(path).mkdir()
 
         with requests.Session() as s: 
             for i in range(len(self.img_srcs)):
@@ -58,6 +55,10 @@ class GetImage(HTMLParser):
 
 
 if __name__ == '__main__':
+    import requests
+    from sys import argv
+    from urllib.request import urlopen
+
     url = urlopen(argv[1])
     html = url.read().decode('UTF-8')
     url.close()

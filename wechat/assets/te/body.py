@@ -4,9 +4,7 @@
 # and collect its paragraphs including body paragraphs, 
 # byline and acknowledgements for illustration 
 
-from sys import argv
 from html.parser import HTMLParser
-from urllib.request import urlopen
 
 class GetBody(HTMLParser):
     def __init__(self):
@@ -75,6 +73,9 @@ class GetBody(HTMLParser):
         return self.paras
 
 if __name__ == '__main__':
+    from sys import argv
+    from urllib.request import urlopen
+
     url = urlopen(argv[1])
     html = url.read().decode('UTF-8')
     url.close()
