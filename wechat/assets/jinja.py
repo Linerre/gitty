@@ -4,7 +4,12 @@
 from jinja2 import Environment, FileSystemLoader
 from sys import argv
 
-file_loader = FileSystemLoader('templates')
+#TODO
+# [X] pass the article dir as a tempalte folder
+# [ ] test if include will work 
+article_dir = str(argv[1])
+
+file_loader = FileSystemLoader(article_dir)
 env = Environment(loader=file_loader)
 
 print(env.list_templates(extensions=["html"]))
@@ -17,9 +22,9 @@ print(env.list_templates(extensions=["html"]))
     # which in turn leads TemplateNotFound error
 
     # better to keep templates in the same folder at the same depth
-template = env.get_template('te-base.html')
+#template = env.get_template('te-base.html')
 
-output = template.render(title='Tiktok')
-print('output is', output)
-with open('test.html', 'w', encoding='utf-8') as test:
-    test.write(output)
+#output = template.render(title='Tiktok')
+#print('output is', output)
+#with open('test.html', 'w', encoding='utf-8') as test:
+#    test.write(output)
