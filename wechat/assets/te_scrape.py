@@ -4,7 +4,7 @@
 # headlines, paragraphs, imgs
 
 from urllib.request import urlopen
-from te_parse import te_parser as te
+from te_parse import te_parser 
 from sys import argv
 import logging
 logging.basicConfig(level=logging.DEBUG)
@@ -29,9 +29,9 @@ try:
     
 
     # prepare the article parser
-    te_article_header = te.GetHeader()
-    te_article_body = te.GetBody()
-    te_article_img = te.GetImage()
+    te_article_header = te_parser.GetHeader()
+    te_article_body = te_parser.GetBody()
+    te_article_img = te_parser.GetImage()
 
     # scrape needed parts 
     te_article_header.feed(html)
