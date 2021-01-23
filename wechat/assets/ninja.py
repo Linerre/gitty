@@ -9,8 +9,14 @@ import os.path
 # [X] pass the article dir as a tempalte folder
 # [X] test if include will work 
 article_dir = os.path.join('/home/leon/projects/gitty/wechat/', str(argv[1]))
+# each time article part template will be updated: 1.html, 2.html, 3.html, ... and so on
+article_part = str(argv[2])
 
-file_loader = FileSystemLoader(['templates', article_dir])
+file_loader = FileSystemLoader(
+        ['templates/te-templates',\
+         'templates/dict-templates',\
+         'templates/twitter-templates',\
+          article_dir])
 env = Environment(loader=file_loader)
 
 print(env.list_templates(extensions=["html"]))
@@ -23,7 +29,7 @@ print(env.list_templates(extensions=["html"]))
     # which in turn leads TemplateNotFound error
 
     # better to keep templates in the same folder at the same depth
-template = env.get_template('te-base.html')
+template = env.get_template(article_part)
 
 output = template.render(title='Tiktok')
 print('output is', output, sep='\n')
