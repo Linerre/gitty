@@ -4,7 +4,7 @@
 # headlines, paragraphs, imgs
 
 from urllib.request import urlopen
-from te_parse import te_parser 
+from . te_parse import te_parser 
 from sys import argv
 import logging
 logging.basicConfig(level=logging.DEBUG)
